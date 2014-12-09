@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       		http://www.springframework.org/schema/beans
+       		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+   <!-- Override the config source to include Web Framework Commons and Share config -->
+   <bean id="${project.artifactId}_config" class="org.springframework.extensions.config.ConfigBootstrap"
+      init-method="register">
+    <property name="configService" ref="web.config" />
+    <property name="configs">
+         <list>
+         	<!-- Share form config -->
+            <value>classpath:alfresco/web-extension/sifuesb-setor-form-config.xml</value>
+			<value>classpath:alfresco/web-extension/sifuesb-prontuario-form-config.xml</value>
+			<value>classpath:alfresco/web-extension/sifuesb-ficha_admissional-form-config.xml</value>
+			<value>classpath:alfresco/web-extension/sifuesb-documento_admissional-form-config.xml</value>
+			<value>classpath:alfresco/web-extension/sifuesb-processo-form-config.xml</value>
+			<value>classpath:alfresco/web-extension/sifuesb-portaria-form-config.xml</value>
+			<value>classpath:alfresco/web-extension/sifuesb-frequencia-form-config.xml</value>
+			<value>classpath:alfresco/web-extension/sifuesb-ilegivel-form-config.xml</value>
+         </list>
+    </property>
+   </bean>
+   
+   <!-- Resource bundles -->
+	<bean id="${project.artifactId}_resources"
+		class="org.springframework.extensions.surf.util.ResourceBundleBootstrapComponent">
+		<property name="resourceBundles">
+			<list>
+				<value>alfresco/module/${project.artifactId}/messages/listasModel</value>
+				<value>alfresco/module/${project.artifactId}/messages/sifuesbModel</value>
+			</list>
+		</property>
+	</bean>
+
+</beans>

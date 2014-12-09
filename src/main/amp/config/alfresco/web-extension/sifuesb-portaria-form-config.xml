@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alfresco-config>
+
+    <!-- sif:portaria type (existing nodes) -->
+    <config evaluator="node-type" condition="sif:portaria">
+        <forms>
+            <!-- Default form configuration for the sif:portaria type -->
+            <form>
+                <field-visibility>
+                    <show id="sif:documento_matricula" force="true" />
+                    <show id="sif:documento_protocolo" force="true" />
+                    <show id="sif:documento_paginas" force="true" />
+                    <show id="sif:documento_pasta" force="true" />
+                    <show id="sif:tipo_ocorrencia" force="true" />
+                    <show id="sif:data_criacao" force="true" />
+
+                    <show id="sif:numero_portaria" force="true" />
+                    <show id="sif:data_portaria" force="true" />
+                    <show id="sif:data_vigencia" force="true" />
+                    <show id="sif:data_final" force="true" />
+                    <show id="sif:edicao_doe" force="true" />
+                    <show id="sif:data_publicacao_doe" force="true" />
+                    <show id="sif:documento_original" force="true" />
+
+                    <!-- aspecto sif:ilegivel -->
+                    <!--
+                    <show id="sif:grau_ilegibilidade" />
+                    <show id="sif:paginas_ilegiveis" />
+                    <show id="sif:desc_ilegibilidade" />
+          -->
+
+                    <show id="cm:name" />
+                    <show id="cm:title" force="true" />
+                    <show id="cm:description" force="true" />
+                    <show id="mimetype" />
+                    <show id="cm:author" force="true" />
+                    <show id="size" for-mode="view" />
+                    <show id="cm:creator" for-mode="view" />
+                    <show id="cm:created" for-mode="view" />
+                    <show id="cm:modifier" for-mode="view" />
+                    <show id="cm:modified" for-mode="view" />
+
+                    <!-- tags and categories -->
+                    <show id="cm:taggable" for-mode="edit" force="true" />
+                    <show id="cm:categories" />
+
+                    <!-- cm:dublincore aspect -->
+                    <show id="cm:publisher" />
+                    <show id="cm:contributor" />
+                    <show id="cm:type" />
+                    <show id="cm:identifier" />
+                    <show id="cm:dcsource" />
+                    <show id="cm:coverage" />
+                    <show id="cm:rights" />
+                    <show id="cm:subject" />
+
+                    <!-- cm:complianceable aspect -->
+                    <show id="cm:removeAfter" />
+
+                    <!-- cm:effectivity aspect -->
+                    <show id="cm:from" />
+                    <show id="cm:to" />
+
+                    <!-- cm:summarizable aspect -->
+                    <show id="cm:summary" />
+
+                    <!-- cm:translatable aspect -->
+                    <show id="cm:translations" />
+
+                    <!-- cm:localizable aspect -->
+                    <show id="cm:locale" />
+
+                    <!-- cm:ownable aspect -->
+                    <show id="cm:owner" />
+
+                    <!-- cm:attachable aspect -->
+                    <show id="cm:attachments" />
+
+                    <!-- cm:emailed aspect -->
+                    <show id="cm:originator" />
+                    <show id="cm:addressee" />
+                    <show id="cm:addressees" />
+                    <show id="cm:sentdate" />
+                    <show id="cm:subjectline" />
+
+                    <!-- exif:exif aspect -->
+                    <show id="exif:dateTimeOriginal" />
+                    <show id="exif:pixelXDimension" />
+                    <show id="exif:pixelYDimension" />
+                    <show id="exif:exposureTime" />
+                    <show id="exif:fNumber" />
+                    <show id="exif:flash" />
+                    <show id="exif:focalLength" />
+                    <show id="exif:isoSpeedRatings" />
+                    <show id="exif:manufacturer" />
+                    <show id="exif:model" />
+                    <show id="exif:software" />
+                    <show id="exif:orientation" />
+                    <show id="exif:xResolution" />
+                    <show id="exif:yResolution" />
+                    <show id="exif:resolutionUnit" />
+
+                    <!-- audio:audio aspect -->
+                    <show id="audio:album" />
+                    <show id="audio:artist" />
+                    <show id="audio:composer" />
+                    <show id="audio:engineer" />
+                    <show id="audio:genre" />
+                    <show id="audio:trackNumber" />
+                    <show id="audio:releaseDate" />
+                    <show id="audio:sampleRate" />
+                    <show id="audio:sampleType" />
+                    <show id="audio:channelType" />
+                    <show id="audio:compressor" />
+
+                    <!-- cm:indexControl aspect -->
+                    <show id="cm:isIndexed" />
+                    <show id="cm:isContentIndexed" />
+
+                    <!-- cm:geographic aspect -->
+                    <show id="cm:latitude" />
+                    <show id="cm:longitude" />
+
+                    <!-- surf:widget aspect -->
+                    <show id="surf:widgetType" />
+                    <show id="surf:mid" />
+                    <show id="surf:label" />
+                </field-visibility>
+                <appearance>
+                    <set label="Dados do sif" id="funcional" appearance="bordered-panel" />
+
+                    <field id="sif:documento_matricula" set="funcional">
+                        <control template="/org/alfresco/components/form/controls/number.ftl" />
+                    </field>
+                    <field id="sif:documento_protocolo" set="funcional">
+                        <control template="/org/alfresco/components/form/controls/number.ftl" />
+                    </field>
+                    <field id="sif:documento_paginas" set="funcional">
+                        <control template="/org/alfresco/components/form/controls/number.ftl" />
+                    </field>
+                    <field id="sif:documento_pasta" set="funcional">
+                        <control template="/org/alfresco/components/form/controls/number.ftl" />
+                    </field>
+                    <field id="sif:tipo_ocorrencia" set="funcional">
+                        <control template="/org/alfresco/components/form/controls/selectone.ftl" />
+                    </field>
+                    <field id="sif:data_criacao" set="funcional">
+                        <control template="/org/alfresco/components/form/controls/date.ftl" />
+                    </field>
+
+                    <!-- portaria -->
+                    <field id="sif:numero_portaria" set="funcional" />
+                    <field id="sif:data_portaria" set="funcional" />
+                    <field id="sif:data_vigencia" set="funcional" />
+                    <field id="sif:data_final" set="funcional" />
+                    <field id="sif:edicao_doe" set="funcional" />
+                    <field id="sif:data_publicacao_doe" set="funcional" />
+                    <field id="sif:documento_original" set="funcional">
+                        <control template="/org/alfresco/components/form/controls/checkbox.ftl" />
+                    </field>
+
+                    <!-- aspecto sif:ilegivel -->
+                    <!--
+                    <field id="sif:grau_ilegibilidade" set="funcional" />
+                    <field id="sif:paginas_ilegiveis" set="funcional" />
+                    <field id="sif:desc_ilegibilidade" set="funcional" />
+                    -->
+
+                    <field id="cm:name">
+                        <control>
+                            <control-param name="maxLength">255</control-param>
+                        </control>
+                    </field>
+                    <field id="cm:title">
+                        <control template="/org/alfresco/components/form/controls/textfield.ftl" />
+                    </field>
+                    <field id="cm:description">
+                        <control>
+                            <control-param name="activateLinks">true</control-param>
+                        </control>
+                    </field>
+                    <field id="mimetype">
+                        <control template="/org/alfresco/components/form/controls/mimetype.ftl" />
+                    </field>
+                    <field id="size">
+                        <control template="/org/alfresco/components/form/controls/size.ftl" />
+                    </field>
+                    <field id="cm:taggable">
+                        <control>
+                            <control-param name="compactMode">true</control-param>
+                            <control-param name="params">aspect=cm:taggable
+                            </control-param>
+                            <control-param name="createNewItemUri">/api/tag/workspace/SpacesStore
+                            </control-param>
+                            <control-param name="createNewItemIcon">tag</control-param>
+                        </control>
+                    </field>
+                    <field id="cm:categories" set="funcional">
+                        <control>
+                            <control-param name="compactMode">true</control-param>
+                        </control>
+                    </field>
+                    <field id="cm:originator" read-only="true" />
+                    <field id="cm:addressee" read-only="true" />
+                    <field id="cm:addressees" read-only="true" />
+                    <field id="cm:sentdate" read-only="true" />
+                    <field id="cm:subjectline" read-only="true" />
+                </appearance>
+            </form>
+
+            <!-- Document Library pop-up Edit Metadata form -->
+            <form id="doclib-simple-metadata">
+                <field-visibility>
+                    <show id="sif:documento_matricula" force="true" />
+                    <show id="sif:documento_protocolo" force="true" />
+                    <show id="sif:documento_paginas" force="true" />
+                    <show id="sif:documento_pasta" force="true" />
+                    <show id="sif:tipo_ocorrencia" force="true" />
+                    <show id="sif:data_criacao" force="true" />
+
+                    <!-- portaria -->
+                    <show id="sif:numero_portaria" force="true" />
+                    <show id="sif:data_portaria" force="true" />
+                    <show id="sif:data_vigencia" force="true" />
+                    <show id="sif:data_final" force="true" />
+                    <show id="sif:edicao_doe" force="true" />
+                    <show id="sif:data_publicacao_doe" force="true" />
+                    <show id="sif:documento_original" force="true" />
+
+                    <!-- aspecto sif:ilegivel -->
+                    <!--
+                    <show id="sif:grau_ilegibilidade" />
+                    <show id="sif:paginas_ilegiveis" />
+                    <show id="sif:desc_ilegibilidade" />
+          -->
+
+                    <show id="cm:name" />
+                    <show id="cm:title" force="true" />
+                    <show id="cm:description" force="true" />
+                    <!-- tags and categories -->
+                    <show id="cm:taggable" for-mode="edit" force="true" />
+                    <show id="cm:categories" />
+                </field-visibility>
+                <edit-form template="../documentlibrary/forms/doclib-simple-metadata.ftl" />
+                <appearance>
+                    <set label="Dados do sif" id="funcional" appearance="bordered-panel" />
+
+                    <field id="sif:documento_matricula" set="funcional">
+                        <control template="/org/alfresco/components/form/controls/number.ftl" />
+                    </field>
+                    <field id="sif:documento_protocolo" set="funcional">
+                        <control template="/org/alfresco/components/form/controls/number.ftl" />
+                    </field>
+                    <field id="sif:documento_paginas" set="funcional">
+                        <control template="/org/alfresco/components/form/controls/number.ftl" />
+                    </field>
+                    <field id="sif:documento_pasta" set="funcional">
+                        <control template="/org/alfresco/components/form/controls/number.ftl" />
+                    </field>
+                    <field id="sif:tipo_ocorrencia" set="funcional">
+                        <control template="/org/alfresco/components/form/controls/selectone.ftl" />
+                    </field>
+                    <field id="sif:data_criacao" set="funcional">
+                        <control template="/org/alfresco/components/form/controls/date.ftl" />
+                    </field>
+                    <field id="sif:numero_portaria" set="funcional">
+                        <control template="/org/alfresco/components/form/controls/number.ftl" />
+                    </field>
+                    <field id="sif:data_portaria" set="funcional">
+                        <control template="/org/alfresco/components/form/controls/date.ftl" />
+                    </field>
+                    <field id="sif:data_vigencia" set="funcional">
+                        <control template="/org/alfresco/components/form/controls/date.ftl" />
+                    </field>
+                    <field id="sif:data_final" set="funcional">
+                        <control template="/org/alfresco/components/form/controls/date.ftl" />
+                    </field>
+                    <field id="sif:edicao_doe" set="funcional">
+                        <control template="/org/alfresco/components/form/controls/number.ftl" />
+                    </field>
+                    <field id="sif:data_publicacao_doe" set="funcional">
+                        <control template="/org/alfresco/components/form/controls/date.ftl" />
+                    </field>
+                    <field id="sif:documento_original" set="funcional">
+                        <control template="/org/alfresco/components/form/controls/checkbox.ftl" />
+                    </field>
+
+                    <!-- aspecto sif:ilegivel -->
+                    <!--
+                    <field id="sif:grau_ilegibilidade" set="funcional">
+                        <control template="/org/alfresco/components/form/controls/selectone.ftl" />
+                    </field>
+                    <field id="sif:paginas_ilegiveis" set="funcional"> 
+                        <control template="/org/alfresco/components/form/controls/textfield.ftl" />
+                    </field>
+                    <field id="sif:desc_ilegibilidade" set="funcional" > 
+                        <control template="/org/alfresco/components/form/controls/textarea.ftl" />
+                    </field>
+                    -->
+
+                    <field id="cm:name">
+                        <control>
+                            <control-param name="maxLength">255</control-param>
+                        </control>
+                    </field>
+                    <field id="cm:title">
+                        <control template="/org/alfresco/components/form/controls/textfield.ftl" />
+                    </field>
+                    <field id="cm:description">
+                        <control>
+                            <control-param name="activateLinks">true</control-param>
+                        </control>
+                    </field>
+                    <field id="cm:taggable">
+                        <control>
+                            <control-param name="compactMode">true</control-param>
+                            <control-param name="params">aspect=cm:taggable
+                            </control-param>
+                            <control-param name="createNewItemUri">/api/tag/workspace/SpacesStore
+                            </control-param>
+                            <control-param name="createNewItemIcon">tag</control-param>
+                        </control>
+                    </field>
+                    <field id="cm:categories" set="funcional">
+                        <control>
+                            <control-param name="compactMode">true</control-param>
+                        </control>
+                    </field>
+                </appearance>
+            </form>
+        </forms>
+    </config>
+
+    <!-- sif:portaria type (new nodes) -->
+    <config evaluator="model-type" condition="sif:portaria">
+        <forms>
+
+            <!-- Default form configuration for the sif:doc_cadastro type -->
+            <form id="search">
+                <field-visibility>
+                    <show id="sif:documento_matricula" force="true" />
+                    <show id="sif:documento_protocolo" force="true" />
+                    <show id="sif:tipo_ocorrencia" force="true" />
+                    <show id="sif:data_criacao" force="true" />
+
+                    <!-- portaria -->
+                    <show id="sif:numero_portaria" force="true" />
+                    <show id="sif:data_portaria" force="true" />
+                    <show id="sif:data_vigencia" force="true" />
+                    <show id="sif:data_final" force="true" />
+                    <show id="sif:edicao_doe" force="true" />
+                    <show id="sif:data_publicacao_doe" force="true" />
+                    <show id="sif:documento_original" force="true" />
+
+                    <!-- aspecto sif:ilegivel -->
+                    <!--
+                    <show id="sif:grau_ilegibilidade" force="true" />
+                    -->
+
+                    <show id="cm:name" />
+                    <show id="cm:title" force="true" />
+                    <show id="cm:description" force="true" />
+                    <show id="mimetype" />
+                    <show id="cm:modified" />
+                    <show id="cm:modifier" />
+                    <show id="cm:categories" force="true" />
+                </field-visibility>
+                <appearance>
+                    <set label="Dados do sif" id="funcional" appearance="bordered-panel" />
+
+                    <field id="sif:documento_matricula" set="funcional">
+                        <control template="/org/alfresco/components/form/controls/number.ftl" />
+                    </field>
+                    <field id="sif:documento_protocolo" set="funcional">
+                        <control template="/org/alfresco/components/form/controls/number.ftl" />
+                    </field>
+                    <field id="sif:tipo_ocorrencia" set="funcional">
+                        <control template="/org/alfresco/components/form/controls/selectmany.ftl">
+                            <control-param name="mode">OR</control-param>
+                        </control>
+                    </field>
+                    <field id="sif:data_criacao" set="funcional">
+                        <control template="/org/alfresco/components/form/controls/daterange.ftl" />
+                    </field>
+
+                    <!-- portaria -->
+                    <field id="sif:numero_portaria" set="funcional">
+                        <control template="/org/alfresco/components/form/controls/number.ftl" />
+                    </field>
+                    <field id="sif:data_portaria" set="funcional">
+                        <control template="/org/alfresco/components/form/controls/daterange.ftl" />
+                    </field>
+                    <field id="sif:data_vigencia" set="funcional">
+                        <control template="/org/alfresco/components/form/controls/daterange.ftl" />
+                    </field>
+                    <field id="sif:data_final" set="funcional">
+                        <control template="/org/alfresco/components/form/controls/daterange.ftl" />
+                    </field>
+                    <field id="sif:edicao_doe" set="funcional">
+                        <control template="/org/alfresco/components/form/controls/number.ftl" />
+                    </field>
+                    <field id="sif:data_publicacao_doe" set="funcional">
+                        <control template="/org/alfresco/components/form/controls/daterange.ftl" />
+                    </field>
+                    <field id="sif:documento_original" set="funcional">
+                        <control template="/org/alfresco/components/form/controls/checkbox.ftl" />
+                    </field>
+
+                    <!-- aspecto sif:ilegivel -->
+                    <!--
+                    <field id="sif:grau_ilegibilidade" set="funcional">
+                        <control template="/org/alfresco/components/form/controls/selectone.ftl" />
+                    </field>
+                    -->
+
+                    <field id="mimetype">
+                        <control template="/org/alfresco/components/form/controls/mimetype.ftl" />
+                    </field>
+                    <field id="cm:modifier">
+                        <control>
+                            <control-param name="forceEditable">true</control-param>
+                        </control>
+                    </field>
+                    <field id="cm:modified">
+                        <control template="/org/alfresco/components/form/controls/daterange.ftl" />
+                    </field>
+                    <field id="cm:categories" set="funcional" />
+                </appearance>
+            </form>
+        </forms>
+    </config>
+    
+    <!-- sif:lista_portaria type -->
+	<config evaluator="model-type" condition="sif:lista_portaria">
+	  <forms>
+		 <!-- Create item form -->
+		 <form>
+		    <field-visibility>
+		       	<show id="sif:lsdocumento_matricula" force="true" />
+		       	<show id="cm:name" />
+				<show id="sif:lsdocumento_protocolo" force="true" />
+				<show id="sif:lsdocumento_paginas" force="true" />
+				<show id="sif:lsdocumento_pasta" force="true" />
+
+<!--				<show id="sif:tipo_ocorrencia" force="true" />-->
+				<show id="sif:lsdata_criacao" force="true" />
+               	<show id="sif:lsnumero_portaria" force="true" />
+               	<show id="sif:lsdata_portaria" force="true" />
+                <show id="sif:lsdata_vigencia" force="true" />
+                <show id="sif:lsdata_final" force="true" />
+                <show id="sif:lsedicao_doe" force="true" />
+                <show id="sif:lsdata_publicacao_doe" force="true" />
+                <show id="sif:lsdocumento_original" force="true" />
+			</field-visibility>
+		    <create-form template="../data-lists/forms/dataitem.ftl" />
+		 </form>
+	  </forms>
+	</config>
+
+	<!-- sif:lista_portaria type (existing nodes) -->
+	<config evaluator="node-type" condition="sif:lista_portaria">
+	  <forms>
+		 <!-- Data List pop-up edit form -->
+		 <form>
+		    <field-visibility>
+				<show id="sif:lsdocumento_matricula" force="true" />
+				<show id="cm:name" />
+                <show id="sif:lsdocumento_protocolo" force="true" />
+                <show id="sif:lsdocumento_paginas" force="true" />
+                <show id="sif:lsdocumento_pasta" force="true" />
+
+<!--                <show id="sif:tipo_ocorrencia" force="true" />-->
+                <show id="sif:lsdata_criacao" force="true" />
+               	<show id="sif:lsnumero_portaria" force="true" />
+               	<show id="sif:lsdata_portaria" force="true" />
+                <show id="sif:lsdata_vigencia" force="true" />
+                <show id="sif:lsdata_final" force="true" />
+                <show id="sif:lsedicao_doe" force="true" />
+                <show id="sif:lsdata_publicacao_doe" force="true" />
+                <show id="sif:lsdocumento_original" force="true" />
+		    </field-visibility>
+		    <edit-form template="../data-lists/forms/dataitem.ftl" />
+		 </form>
+		 
+		 <!-- Data Grid view -->
+		 <!-- An example of an optional "datagrid" form-id to show a different set of fields to the new/edit forms -->
+		 <form id="datagrid">
+		    <field-visibility>
+		       	<show id="sif:lsdocumento_matricula" force="true" />
+		       	<show id="cm:name" />
+		        <show id="sif:lsdocumento_protocolo" force="true" />
+		        <show id="sif:lsdocumento_paginas" force="true" />
+		        <show id="sif:lsdocumento_pasta" force="true" />
+
+<!--		        <show id="sif:tipo_ocorrencia" force="true" />-->
+		        <show id="sif:lsdata_criacao" force="true" />
+               	<show id="sif:lsnumero_portaria" force="true" />
+               	<show id="sif:lsdata_portaria" force="true" />
+                <show id="sif:lsdata_vigencia" force="true" />
+                <show id="sif:lsdata_final" force="true" />
+                <show id="sif:lsedicao_doe" force="true" />
+                <show id="sif:lsdata_publicacao_doe" force="true" />
+                <show id="sif:lsdocumento_original" force="true" />
+		    </field-visibility>
+		 </form>
+	  </forms>
+	</config>
+
+</alfresco-config>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alfresco-config>
+
+	<!-- aspect sif:ilegivel -->
+	<config evaluator="aspect" condition="sif:ilegivel">
+		<forms>
+			<form>
+				<field-visibility>
+					<show id="sif:grau_ilegibilidade" />
+					<show id="sif:paginas_ilegiveis" />
+					<show id="sif:desc_ilegibilidade" />
+				</field-visibility>
+				<appearance>
+					<set id="ilegivel" label="Dados Ilegíveis" appearance="bordered-panel" />
+
+					<field id="sif:grau_ilegibilidade" set="ilegivel" />
+					<field id="sif:paginas_ilegiveis" set="ilegivel" />
+					<field id="sif:desc_ilegibilidade" set="ilegivel">
+						<control template="/org/alfresco/components/form/controls/textarea.ftl" />
+					</field>
+				</appearance>
+			</form>
+		</forms>
+	</config>
+
+</alfresco-config>

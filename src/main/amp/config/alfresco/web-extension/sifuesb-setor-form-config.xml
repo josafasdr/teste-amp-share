@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE beans PUBLIC '-//SPRING//DTD BEAN//EN' 'http://www.springframework.org/dtd/spring-beans.dtd'> -->
+<alfresco-config>
+
+	<!-- sif:setor type -->
+	<config evaluator="model-type" condition="sif:setor">
+		<forms>
+			<!-- Create item form -->
+			<form>
+				<field-visibility>
+					<show id="sif:codigo_setor" />
+					<show id="cm:name" />
+					<show id="sif:sigla_setor" />
+					<show id="sif:setor_superior" />
+				</field-visibility>
+				<create-form template="../data-lists/forms/dataitem.ftl" />
+				<appearance>
+					<set id="setor" />
+
+					<field id="sif:codigo_setor" set="setor" />
+					<field id="cm:name" set="setor" />
+					<field id="sif:sigla_setor" set="setor" />
+					<field id="sif:setor_superior" set="setor">
+						<control>
+                            <control-param name="startLocation">{parent}</control-param>
+                        </control>
+					</field>
+				</appearance>
+			</form>
+
+			<!-- Data Grid view -->
+			<!-- An example of an optional "datagrid" form-id to show a different 
+				set of fields to the new/edit forms -->
+			<form id="datagrid">
+				<field-visibility>
+					<show id="sif:codigo_setor" />
+					<show id="cm:name" />
+					<show id="sif:sigla_setor" />
+					<show id="sif:setor_superior" />
+				</field-visibility>
+				<appearance>
+					<set id="setor" />
+
+					<field id="sif:codigo_setor" set="setor" />
+					<field id="cm:name" set="setor" />
+					<field id="sif:sigla_setor" set="setor" />
+					<field id="sif:setor_superior" set="setor" />
+				</appearance>
+			</form>
+		</forms>
+	</config>
+
+	<!-- sif:setor type (existing nodes) -->
+	<config evaluator="node-type" condition="sif:setor">
+		<forms>
+			<!-- Data List pop-up edit form -->
+			<form>
+				<field-visibility>
+					<show id="sif:codigo_setor" />
+					<show id="cm:name" />
+					<show id="sif:sigla_setor" />
+					<show id="sif:setor_superior" />
+				</field-visibility>
+				<edit-form template="../data-lists/forms/dataitem.ftl" />
+				<appearance>
+					<set id="setor" />
+
+					<field id="sif:codigo_setor" set="setor" />
+					<field id="cm:name" set="setor" />
+					<field id="sif:sigla_setor" set="setor" />
+					<field id="sif:setor_superior" set="setor">
+						<control>
+							<control-param name="startLocation">{parent}</control-param>
+						</control>
+					</field>
+				</appearance>
+			</form>
+		</forms>
+	</config>
+
+</alfresco-config>

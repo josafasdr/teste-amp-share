@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alfresco-config>
+	
+	<!-- Document Library config section -->
+	<config evaluator="string-compare" condition="DocumentLibrary">
+
+		<types>
+			<type name="cm:content">
+				<subtype name="sif:documento_admissional" />
+				<subtype name="sif:ficha_admissional" />
+				<subtype name="sif:processo" />
+				<subtype name="sif:portaria" />
+				<subtype name="sif:frequencia" />
+			</type>
+
+			<type name="sif:documento">
+				<subtype name="sif:documento_admissional" />
+				<subtype name="sif:documento_funcional" />
+			</type>
+
+			<type name="sif:documento_funcional">
+				<subtype name="sif:ficha_admissional" />
+				<subtype name="sif:processo" />
+				<subtype name="sif:portaria" />
+				<subtype name="sif:frequencia" />
+			</type>
+
+			<type name="sif:processo">
+				<subtype name="sif:portaria" />
+			</type>
+
+			<type name="cm:folder">
+				<subtype name="sif:prontuario" />
+			</type>
+		</types>
+
+		<aspects>
+			<visible>
+				<aspect name="sif:ilegivel" />
+			</visible>
+
+			<addable>
+			</addable>
+
+			<removeable>
+			</removeable>
+		</aspects>
+
+		<!-- Custom Metadata Templates for the Document Library Browse View Use 
+			view="simple" or view="detailed" to limit the display to one particular view. -->
+		<metadata-templates>
+			<!-- Default (fallback) -->
+			<template id="default">
+				<banner index="10" id="lockBanner"
+					evaluator="evaluator.doclib.metadata.hasLockBanner">{lockBanner}</banner>
+				<banner index="20" id="syncTransientError"
+					evaluator="evaluator.doclib.metadata.hasSyncTransientErrorBanner">{syncTransientError}</banner>
+				<banner index="30" id="syncFailed"
+					evaluator="evaluator.doclib.metadata.hasSyncFailedBanner">{syncFailed}</banner>
+				<line index="10" id="sif_servidor" view="detailed" simpleView="true">{sif_prontuario_matricula
+					label.sif_prontuario_matricula}{sif_cargo}
+				</line>
+				<line index="20" id="sif_prontuario" view="detailed" simpleView="true">
+					{sif_prontuario_protocolo
+					label.sif_prontuario_protocolo}{sif_tipo_pasta}{sif_quantidade_pastas}{sif_documento_matricula
+					label.sif_documento_matricula}{sif_documento_protocolo
+					label.sif_documento_protocolo}{sif_documento_pasta
+					label.sif_documento_pasta}{sif_documento_paginas
+					label.sif_documento_paginas}{sif_frequencia_ano
+					label.sif_frequencia_ano}{sif_frequencia_mes
+					label.sif_frequencia_mes}{sif_documento_original
+					label.sif_documento_original}
+				</line>
+				<line index="30" id="sif_localizacao" view="detailed"
+					simpleView="true">{sif_modulo
+					label.sif_modulo}{sif_prateleira}{sif_ordem
+					label.sif_ordem}
+				</line>
+				<line index="40" id="description" view="detailed">{description}</line>
+				<line index="60" id="tags" view="detailed">{tags}</line>
+				<line index="70" id="date">{date}{size}</line>
+				<line index="80" id="social" view="detailed">{social}</line>
+			</template>
+		</metadata-templates>
+
+	</config>
+
+	<config replace="true" evaluator="string-compare" condition="AdvancedSearch">
+		<advanced-search>
+			<!-- Forms for the advanced search type list -->
+			<forms>
+				<form labelId="search.form.label.cm_content" descriptionId="search.form.desc.cm_content">cm:content
+				</form>
+				<form labelId="search.form.label.cm_folder" descriptionId="search.form.desc.cm_folder">cm:folder
+				</form>
+				<form labelId="type.sif_prontuario" descriptionId="search.form.desc.sif_prontuario">sif:prontuario
+				</form>
+				<form labelId="type.sif_documento_admissional" descriptionId="search.form.desc.sif_documento_admissional">sif:documento_admissional
+				</form>
+				<form labelId="type.sif_ficha_admissional" descriptionId="search.form.desc.sif_ficha_admissional">sif:ficha_admissional
+				</form>
+				<form labelId="type.sif_processo" descriptionId="search.form.desc.sif_processo">sif:processo
+				</form>
+				<form labelId="type.sif_portaria" descriptionId="search.form.desc.sif_portaria">sif:portaria
+				</form>
+				<form labelId="type.sif_frequencia" descriptionId="search.form.desc.sif_frequencia">sif:frequencia
+				</form>
+			</forms>
+		</advanced-search>
+	</config>
+	
+</alfresco-config>

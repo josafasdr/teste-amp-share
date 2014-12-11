@@ -4,6 +4,7 @@
 function getContentTypes()
 {
    // TODO: Data webscript call to return list of available types
+	// var site = page.url.templateArgs.site;
    var contentTypes = [
    {
       id: "cm:content",

@@ -1,5 +1,0 @@
-/**
- * 
- */
-
-model.viewRendererNames.push("large");

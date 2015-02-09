@@ -39,7 +39,6 @@ Alfresco.forms.validation.preencheProntuario = function preencheProntuario(field
 			field.form.prop_sif_email.value = resultado.email;
 		}
 		if (resultado.protocolo != null) {
-			if (field.form.prop_sif_prontuario_protocolo.value == null || field.form.prop_sif_prontuario_protocolo.value == "")
 				field.form.prop_sif_prontuario_protocolo.value = resultado.protocolo;
 		}
 		if (resultado.modulo != null) {
@@ -58,7 +57,6 @@ Alfresco.forms.validation.preencheProntuario = function preencheProntuario(field
 			field.form.prop_sif_quantidade_pastas.value = resultado.quantidadePastas;
 		}
 		if (resultado.paginas != null) {
-			if (field.form.prop_sif_prontuario_paginas.value == "")
 				field.form.prop_sif_prontuario_paginas.value = resultado.paginas;
 		}
 	};

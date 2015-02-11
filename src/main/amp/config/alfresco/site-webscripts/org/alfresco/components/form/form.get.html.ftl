@@ -1,4 +1,4 @@
-<@script type="text/javascript" src="${url.context}/res/js/formValidation.js"></@script>
+<@script type="text/javascript" src="${url.context}/res/teste-uesb-share/js/formValidation.js"></@script>
 
 <@standalone>
    <@markup id="css" >

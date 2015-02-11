@@ -12,14 +12,14 @@
     <property name="configs">
          <list>
          	<!-- Share form config -->
-            <value>classpath:alfresco/web-extension/sifuesb-setor-form-config.xml</value>
-			<value>classpath:alfresco/web-extension/sifuesb-prontuario-form-config.xml</value>
-			<value>classpath:alfresco/web-extension/sifuesb-ficha_admissional-form-config.xml</value>
-			<value>classpath:alfresco/web-extension/sifuesb-documento_admissional-form-config.xml</value>
-			<value>classpath:alfresco/web-extension/sifuesb-processo-form-config.xml</value>
-			<value>classpath:alfresco/web-extension/sifuesb-portaria-form-config.xml</value>
-			<value>classpath:alfresco/web-extension/sifuesb-frequencia-form-config.xml</value>
-			<value>classpath:alfresco/web-extension/sifuesb-ilegivel-form-config.xml</value>
+            <value>classpath:alfresco/web-extension/sifuesb-forms/sifuesb-setor-form-config.xml</value>
+			<value>classpath:alfresco/web-extension/sifuesb-forms/sifuesb-prontuario-form-config.xml</value>
+			<value>classpath:alfresco/web-extension/sifuesb-forms/sifuesb-ficha_admissional-form-config.xml</value>
+			<value>classpath:alfresco/web-extension/sifuesb-forms/sifuesb-documento_admissional-form-config.xml</value>
+			<value>classpath:alfresco/web-extension/sifuesb-forms/sifuesb-processo-form-config.xml</value>
+			<value>classpath:alfresco/web-extension/sifuesb-forms/sifuesb-portaria-form-config.xml</value>
+			<value>classpath:alfresco/web-extension/sifuesb-forms/sifuesb-frequencia-form-config.xml</value>
+			<value>classpath:alfresco/web-extension/sifuesb-forms/sifuesb-ilegivel-form-config.xml</value>
          </list>
     </property>
    </bean>
